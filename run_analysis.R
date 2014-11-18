@@ -1,7 +1,15 @@
-library(sqldf)
+library(dplyr)
 
 #####FUNCTIONS SECTION
 
+##Function to download zipfile
+downloadData <-function(url, fileDestPath, fileName){
+  
+  file <- paste(fileDestPath,"/", fileName, sep = "")
+  download.file(fileUrl,destfile=file)
+  T
+  
+}
 
 ##Function to Read txt files
 readData <- function(path, fileName) {
@@ -12,21 +20,20 @@ readData <- function(path, fileName) {
   
 }
 
+##Function to Write txt files
 writeData <- function(path, fileName, dataset) {
   
   file <- paste(path,"/", fileName, sep = "")
-  write.table(dataset, file, row.names = FALSE)
+  write.table(dataset, file, col.names = F)
   T
   
 }
-
-
-
 
 ##end functions section
 
 
 ##Setting File and Path Names
+
 rootPath <- "./UCI HAR Dataset"
 trainPath <- "./UCI HAR Dataset/train"
 testPath <- "./UCI HAR Dataset/test"
@@ -41,6 +48,11 @@ flNameData_train <- "X_train.txt"
 flNameSubject_test <- "subject_test.txt"
 flNameMeasures_test <- "y_test.txt"
 flNameData_test <- "X_test.txt"
+
+###DOWNLOADING AND EXTRACTING DATA
+downloadData(urlFile, pathDest, downloadedFile)
+
+
 
 ###READING Files Section
 ##Reading Activities Labels And Features
