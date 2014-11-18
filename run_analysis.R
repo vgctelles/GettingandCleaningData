@@ -24,7 +24,7 @@ readData <- function(path, fileName) {
 writeData <- function(path, fileName, dataset) {
   
   file <- paste(path,"/", fileName, sep = "")
-  write.table(dataset, file, col.names = F)
+  write.table(dataset, file, row.name = F)
   T
   
 }
