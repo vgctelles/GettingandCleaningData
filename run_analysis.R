@@ -175,6 +175,6 @@ result <-
 print(result)
 
 finalFile <- "vTelles_finalFile.txt"
-writeData(rootPath, finalFile, resultPart1)
+writeData(rootPath, finalFile, result)
 
 
